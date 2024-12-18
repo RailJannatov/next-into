@@ -1,8 +1,10 @@
-export default function Page({ data }: { data: any }) {
+type TData = { userId: number; id: number; title: string; body: string };
+
+export default function Page({ data }: { data: Array<TData> }) {
   return (
     <div>
       <h1> This is about page</h1>
-      {data.map((post: any) => (
+      {data.map((post: TData) => (
         <>
           <p>{post.title}</p>
           <br />
